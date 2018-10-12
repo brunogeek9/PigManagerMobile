@@ -66,7 +66,7 @@ public class CadastroFragment extends Fragment {
                         //Caso a resposta seja bem sucedida
                         if(response.isSuccessful()){
                             Log.i("PA1", "Inseriu com sucesso");
-
+                            Toast.makeText(getActivity(), "Salvo com sucesso", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -75,6 +75,7 @@ public class CadastroFragment extends Fragment {
                         //Método que trata a falha
                         Log.i("PA1", "Falha ao inserir");
                         Log.i("PA1","Erro: "+t.getMessage());
+                        Toast.makeText(getActivity(), "Erro ao salvar: "+t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -93,6 +94,11 @@ public class CadastroFragment extends Fragment {
 //                        Log.i("PA1","Falhou"+t.getMessage());
 //                    }
 //                });
+
+
+                //Enviando de volta para o fragment principal
+                //Tratar isso
+                //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InicioFragment()).commit();
             }
         });
 
