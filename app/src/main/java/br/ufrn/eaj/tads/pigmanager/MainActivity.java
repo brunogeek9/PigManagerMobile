@@ -5,10 +5,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
+
+import br.ufrn.eaj.tads.pigmanager.fragments.ConfiguracaoFragment;
+import br.ufrn.eaj.tads.pigmanager.fragments.InicioFragment;
+import br.ufrn.eaj.tads.pigmanager.fragments.ListarFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_list:
                     fragmentSelecionado = new ListarFragment();
                     break;
+                case R.id.nav_settings:
+                    fragmentSelecionado = new ConfiguracaoFragment();
+                    break;
+
             }
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentSelecionado).commit();

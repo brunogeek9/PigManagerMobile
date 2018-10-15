@@ -1,7 +1,6 @@
-package br.ufrn.eaj.tads.pigmanager;
+package br.ufrn.eaj.tads.pigmanager.fragments;
 
 
-import android.media.Image;
 import android.os.Bundle;
 //import android.app.Fragment;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+
+import br.ufrn.eaj.tads.pigmanager.R;
+import br.ufrn.eaj.tads.pigmanager.fragments.CadastroFragment;
 
 
 /**

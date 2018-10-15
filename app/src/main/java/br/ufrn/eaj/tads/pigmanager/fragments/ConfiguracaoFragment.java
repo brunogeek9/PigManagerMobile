@@ -1,4 +1,4 @@
-package br.ufrn.eaj.tads.pigmanager;
+package br.ufrn.eaj.tads.pigmanager.fragments;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.ufrn.eaj.tads.pigmanager.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListarFragment extends Fragment {
+public class ConfiguracaoFragment extends Fragment {
 
 
-    public ListarFragment() {
+    public ConfiguracaoFragment() {
         // Required empty public constructor
     }
 
@@ -22,8 +24,14 @@ public class ListarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //inflando a view para retorna-lá depois
+        View view = inflater.inflate(R.layout.fragment_configuracao, container, false);
+
+
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_listar, container, false);
+        return view;
     }
 
 }

@@ -1,4 +1,4 @@
-package br.ufrn.eaj.tads.pigmanager;
+package br.ufrn.eaj.tads.pigmanager.fragments;
 
 
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
 import br.ufrn.eaj.tads.pigmanager.retrofit.RetrofitConfig;
 import retrofit2.Call;

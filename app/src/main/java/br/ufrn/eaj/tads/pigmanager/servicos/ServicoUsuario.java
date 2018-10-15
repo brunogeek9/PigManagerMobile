@@ -12,6 +12,9 @@ public interface ServicoUsuario {
     @GET("usuario/{id}")
     Call<Usuario> buscarUsuario(@Path("id") String usuario);
 
+    @GET("usuario")
+    Call<Usuario> listarUsuarios();
+
     @POST("usuario/")
     Call<Usuario> cadastrarUsuario(@Body Usuario usuario);
 }
