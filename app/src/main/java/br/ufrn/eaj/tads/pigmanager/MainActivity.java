@@ -12,7 +12,7 @@ import br.ufrn.eaj.tads.pigmanager.fragments.InicioFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.ListarFragment;
 
 public class MainActivity extends AppCompatActivity {
-
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
