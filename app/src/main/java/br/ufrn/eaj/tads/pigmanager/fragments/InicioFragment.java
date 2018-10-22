@@ -2,7 +2,6 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 
 
 import android.os.Bundle;
-//import android.app.Fragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.util.Log;
@@ -11,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import br.ufrn.eaj.tads.pigmanager.R;
-import br.ufrn.eaj.tads.pigmanager.fragments.CadastroFragment;
+
+//import android.app.Fragment;
 
 
 /**
@@ -30,7 +30,14 @@ public class InicioFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
-
+        CardView card2 = view.findViewById(R.id.card2);
+        card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroFragmentMatriz())
+                        .commit();
+            }
+        });
 
         CardView card1 = view.findViewById(R.id.card1);
         card1.setOnClickListener(new View.OnClickListener() {
