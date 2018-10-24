@@ -13,10 +13,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
@@ -29,7 +32,8 @@ import retrofit2.Response;
 import static br.ufrn.eaj.tads.pigmanager.modelo.enums.EnumEstagio.ALEITAMENTO;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Classe responsável por mostrar o form
+ * de cadastro de matriz e de trata-lo
 */
 public class CadastroFragmentMatriz extends Fragment {
     // TODO: Rename parameter arguments, choose names that
@@ -59,35 +63,48 @@ public class CadastroFragmentMatriz extends Fragment {
         peso = view.findViewById(R.id.textPeso);
         spinner = view.findViewById(R.id.spinner);
 
+        /* Adicionando os estagios de uma matriz no spinner
+           para que o usuário escolha em qual estágio a matriz se encontra
+           Se adicionar um novo estágio, adicione no SPINNER
+         */
         lista.add(EnumEstagio.ALEITAMENTO.toString());
         lista.add(EnumEstagio.DESCANSO.toString());
         lista.add(EnumEstagio.GRAVIDA.toString());
         lista.add(EnumEstagio.PRENHA.toString());
+        /* Fim da adição dos estagios  */
 
+        /* Adapter para o spinner mostrar na tela os estagios da matriz
+        * (OBRIGATORIO PARA O SPINNER)*/
         ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, lista);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        /* Fim do Adapter*/
 
         Button butao = view.findViewById(R.id.botaoCadastrarMatriz);
+        /* Tratando o clique no botão de cadastrar*/
         butao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                 try {
+                    // TODO: 23/10/2018 Tratar quando o usuário não preencher os todos os campos
+                    /* Pegando os dados necessários da view para mandar a requisição para o serviço
+                    * (Necessário o bloco try catch porque o metodo parse da Classe SimpleDateFormat
+                    * lança uma exceção)*/
                     matriz = new Matriz();
                     matriz.setIdentificador(Double.valueOf(identificador.getText().toString()));
                     matriz.setRaca(raca.getText().toString());
                     matriz.setPeso(Double.valueOf(peso.getText().toString()));
                     matriz.setArquivo("TSADSASDA");
                     matriz.setEstagio(EnumEstagio.valueOf(spinner.getSelectedItem().toString()));
-                    matriz.setDataNascimento(new SimpleDateFormat("yyyy/MM/dd")
-                                    .parse(dataNascimento.getText().toString()));
+                    matriz.setDataNascimento(new SimpleDateFormat("yyyy-MM-dd")
+                            .parse(dataNascimento.getText().toString()));
+
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                /*Fim da adição dos dados ao objetos matriz*/
 
-                ;
                 Call<Matriz> call = new RetrofitConfig().getMatrizService().cadastrarMatriz(matriz);
 
                 call.enqueue(new Callback<Matriz>() {
@@ -96,6 +113,13 @@ public class CadastroFragmentMatriz extends Fragment {
                         Log.i("PA1", "CLICOU");
                         if (response.isSuccessful())
                             Toast.makeText(getActivity(), "Cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                        else {
+                            try {
+                                Log.i("PA1", response.errorBody().string());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
 
                     @Override
@@ -108,20 +132,5 @@ public class CadastroFragmentMatriz extends Fragment {
         });
 
         return view;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }
