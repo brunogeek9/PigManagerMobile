@@ -1,0 +1,13 @@
+#Tue Oct 23 13:16:23 GFT 2018
+path.3=classes.dex
+path.2=classes.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.3=C\:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\29
+base.2=C\:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\30
+base.1=C\:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\28
+base.0=C\:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\31
