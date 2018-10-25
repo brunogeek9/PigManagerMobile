@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import br.ufrn.eaj.tads.pigmanager.fragments.ConfiguracaoFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.InicioFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.ListarFragment;
+import br.ufrn.eaj.tads.pigmanager.fragments.ListarPigFragment;
 
 public class MainActivity extends AppCompatActivity {
  
@@ -36,8 +37,13 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_home:
                     fragmentSelecionado = new InicioFragment();
                     break;
-                case R.id.nav_list:
+                case R.id.nav_listUsuario:
                     fragmentSelecionado = new ListarFragment();
+                    break;
+
+                case R.id.nav_listPig:
+                    fragmentSelecionado = new ListarPigFragment();
+                    //criar o fragment listar pigs
                     break;
                 case R.id.nav_settings:
                     fragmentSelecionado = new ConfiguracaoFragment();
