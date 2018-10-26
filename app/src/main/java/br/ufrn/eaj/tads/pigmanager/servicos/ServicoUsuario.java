@@ -1,5 +1,7 @@
 package br.ufrn.eaj.tads.pigmanager.servicos;
 
+import java.util.List;
+
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -12,8 +14,8 @@ public interface ServicoUsuario {
     @GET("usuario/{id}")
     Call<Usuario> buscarUsuario(@Path("id") String usuario);
 
-    @GET("usuario")
-    Call<Usuario> listarUsuarios();
+    @GET("usuario/{id}")
+    Call<List<Usuario>> listarUsuarios();
 
     @POST("usuario/")
     Call<Usuario> cadastrarUsuario(@Body Usuario usuario);

@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.nav_listPig:
                     fragmentSelecionado = new ListarPigFragment();
-                    //criar o fragment listar pigs
                     break;
                 case R.id.nav_settings:
                     fragmentSelecionado = new ConfiguracaoFragment();
