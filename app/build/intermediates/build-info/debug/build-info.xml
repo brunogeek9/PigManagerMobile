@@ -5,56 +5,32 @@
     build-mode="COLD"
     density="xhdpi"
     format="10"
-    ir-eligibility="R_CLASS_CHANGE"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.1"
-    timestamp="1540570952089"
+    timestamp="1540572951008"
     token="9155073181097669497"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2666" />
+        duration="202" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="96" />
+        duration="38" />
     <task
         name="verifier"
-        duration="97" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1540570745502"
+        timestamp="1540572856805"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
@@ -63,13 +39,13 @@
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
@@ -84,13 +60,13 @@
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
@@ -98,35 +74,11 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1540570952089"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1540572951008"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\lucas\AndroidStudioProjects\PigManager2\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
     </build>
 
