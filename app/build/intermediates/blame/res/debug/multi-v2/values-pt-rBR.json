@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManagerMobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\9804ee7b916126d0bb69d1cc6dd23caa\\res\\values-pt-rBR\\values-pt-rBR.xml",

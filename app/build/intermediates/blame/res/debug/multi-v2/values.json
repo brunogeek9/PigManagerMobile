@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManagerMobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\9804ee7b916126d0bb69d1cc6dd23caa\\res\\values\\values.xml",
@@ -20,23 +20,6 @@
                         "endLines": "194,195,453,457,666,667,668,669,670,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,747,748,756,757,765,766,767,770,787,828,2171,2175,2177,2183,2185,2371,2372",
                         "endColumns": "68,62,35,207,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,33,34,34,69,70,116,12,109,12,128,71,66",
                         "endOffsets": "10350,10413,39388,39753,58571,58639,58711,58781,58842,62455,62516,62578,62642,62704,62765,62833,62933,62993,63059,63132,63201,63258,63310,63372,63897,63973,64353,64388,64770,64804,64839,64966,65930,69460,158642,158843,159019,159403,159598,173416,173483"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "17,128",
-                        "endColumns": "48,69",
-                        "endOffsets": "61,193"
-                    },
-                    "to": {
-                        "startLines": "817,821",
-                        "startColumns": "4,4",
-                        "startOffsets": "68054,68456",
-                        "endColumns": "48,69",
-                        "endOffsets": "68098,68521"
                     }
                 },
                 {
@@ -59,39 +42,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManagerMobile\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "3,10",
+                        "startLines": "1,4",
                         "startColumns": "4,4",
-                        "startOffsets": "57,384",
-                        "endLines": "8,12",
-                        "endColumns": "12,12",
-                        "endOffsets": "376,530"
+                        "startOffsets": "17,128",
+                        "endColumns": "48,69",
+                        "endOffsets": "61,193"
                     },
                     "to": {
-                        "startLines": "838,2436",
+                        "startLines": "817,821",
                         "startColumns": "4,4",
-                        "startOffsets": "70194,177411",
-                        "endLines": "843,2438",
-                        "endColumns": "12,12",
-                        "endOffsets": "70508,177554"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,6,2,3,5",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "157,250,57,105,204",
-                        "endColumns": "45,49,46,50,44",
-                        "endOffsets": "198,295,99,151,244"
-                    },
-                    "to": {
-                        "startLines": "159,160,161,162,163",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "8128,8174,8224,8271,8322",
-                        "endColumns": "45,49,46,50,44",
-                        "endOffsets": "8169,8219,8266,8317,8362"
+                        "startOffsets": "68054,68456",
+                        "endColumns": "48,69",
+                        "endOffsets": "68098,68521"
                     }
                 },
                 {
@@ -145,6 +109,42 @@
                         "endLines": "11,155,156,157,158,301,663,664,665,871,1924,1927,1930",
                         "endColumns": "51,60,61,61,63,684,58,56,53,12,12,12,12",
                         "endOffsets": "549,7935,7997,8059,8123,25909,58390,58447,58501,72373,139572,139698,139826"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManagerMobile\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "57,384",
+                        "endLines": "8,12",
+                        "endColumns": "12,12",
+                        "endOffsets": "376,530"
+                    },
+                    "to": {
+                        "startLines": "838,2436",
+                        "startColumns": "4,4",
+                        "startOffsets": "70194,177411",
+                        "endLines": "843,2438",
+                        "endColumns": "12,12",
+                        "endOffsets": "70508,177554"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManagerMobile\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,6,2,3,5",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "157,250,57,105,204",
+                        "endColumns": "45,49,46,50,44",
+                        "endOffsets": "198,295,99,151,244"
+                    },
+                    "to": {
+                        "startLines": "159,160,161,162,163",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "8128,8174,8224,8271,8322",
+                        "endColumns": "45,49,46,50,44",
+                        "endOffsets": "8169,8219,8266,8317,8362"
                     }
                 },
                 {
