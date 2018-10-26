@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\98ccaffa4b953a3e39fd73dd097f540a\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5fe83ec7e6e71b8c3c48c879e40fa6cb\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\94ba4f27527a66ee4e8b02d0a2d184f8\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\7c6d63b26118c6e434d8f92dd78de8d2\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

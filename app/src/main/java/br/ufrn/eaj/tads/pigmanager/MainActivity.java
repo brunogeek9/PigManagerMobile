@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import br.ufrn.eaj.tads.pigmanager.fragments.ConfiguracaoFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.InicioFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.ListarFragment;
-import br.ufrn.eaj.tads.pigmanager.helper.BottomNavigationViewHelper;
+import br.ufrn.eaj.tads.pigmanager.fragments.ListarPigFragment;
 
 public class MainActivity extends AppCompatActivity {
  
@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomnav = findViewById(R.id.bottom_navigation);
-        //Desabilitando a animação do menu inferior
-        BottomNavigationViewHelper.disableShiftMode(bottomnav);
         bottomnav.setOnNavigationItemSelectedListener(navListenner);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InicioFragment()).commit();
+
+
 
     }
 
@@ -37,8 +37,12 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_home:
                     fragmentSelecionado = new InicioFragment();
                     break;
-                case R.id.nav_list:
+                case R.id.nav_listUsuario:
                     fragmentSelecionado = new ListarFragment();
+                    break;
+
+                case R.id.nav_listPig:
+                    fragmentSelecionado = new ListarPigFragment();
                     break;
                 case R.id.nav_settings:
                     fragmentSelecionado = new ConfiguracaoFragment();

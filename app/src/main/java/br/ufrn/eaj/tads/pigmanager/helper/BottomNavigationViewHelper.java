@@ -9,6 +9,8 @@ import java.lang.reflect.Field;
 
 public class BottomNavigationViewHelper {
 
+
+    //Método caso queira desabilitar a animação "shift mode" do menu inferior
     public static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
