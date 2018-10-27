@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +28,14 @@ import retrofit2.Response;
 public class ListarFragment extends Fragment {
     private RetrofitConfig retrofitConfig;
     private List<Usuario> listaUsuario = new ArrayList<>();
+   // private Button btteste;
 
     public ListarFragment() {
         // Required empty public constructor
     }
 
 
-    public void listarUsuariosRetrofit(){
+    /*public void listarUsuariosRetrofit(){
         ServicoUsuario servicoUsuario = (ServicoUsuario) retrofitConfig.getUsuarioService().listarUsuarios();
         Call<List<Usuario>> call = servicoUsuario.listarUsuarios();
         call.enqueue(new Callback<List<Usuario>>() {
@@ -56,17 +58,59 @@ public class ListarFragment extends Fragment {
 
             }
         });
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_listar, container, false);
+       final Button bt = view.findViewById(R.id.btteste);
+
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("VDC", "BOTAO LISTAR");
+
+                Call<List<Usuario>> call = new RetrofitConfig().getUsuarioService().listarUsuarios();
+                call.enqueue(new Callback<List<Usuario>>() {
+                    @Override
+                    public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                        Log.i("VDC", "resposta bem sucedida? " +response.isSuccessful());
+
+                        if(response.isSuccessful()){
+                           // Log.i("VDC", "passou do if"+ response.isSuccessful());
+                            listaUsuario = response.body();
+
+                            for (int i = 0; i<listaUsuario.size(); i++){
+                                Usuario usuario = listaUsuario.get(i);
+                                Log.i("VDC", "USUARIOS CADASTRADOS" + usuario.getId() + usuario.getNome() + usuario.getSenha() + usuario.getEmail());
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                        Log.i("VDC", "Falha ao listarr");
+                        Log.i("VDC","Erro: "+t.getMessage());
+
+                    }
+                });
+            }
+        });
 
 
-        //listarUsuariosRetrofit();
+
+        Log.i("VDC", "ENTOU NO CARD DE LISTAR");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_listar, container, false);
+        return view;
 
     }
+
+   /*public  void clicklistar(View v){
+        Log.i("VDC", "BOTAO LISTAR");
+        listarUsuariosRetrofit();
+
+
+    }*/
 
 }

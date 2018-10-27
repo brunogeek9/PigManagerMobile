@@ -14,7 +14,7 @@ public interface ServicoUsuario {
     @GET("usuario/{id}")
     Call<Usuario> buscarUsuario(@Path("id") String usuario);
 
-    @GET("usuario/{id}")
+    @GET("usuario/")
     Call<List<Usuario>> listarUsuarios();
 
     @POST("usuario/")
