@@ -70,7 +70,8 @@ public class UsuarioAdapter extends RecyclerView.Adapter {
                 Fragment fragment = new EditarFragment();
                 fragment.setArguments(dados);
 
-                
+                //Implementar a troca de fragment
+
                 //usuarioViewHolder.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentSelecionado).commit();
             }
         });
@@ -94,6 +95,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter {
 
     private void editarUsuario(int position){
         //MetodosUsuario.editarUsuario(listarUsuario.get(position));
+        /*
         Usuario usuario = listarUsuario.get(position);
         Bundle dados = new Bundle();
         dados.putString("nome", usuario.getNome());
@@ -103,7 +105,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter {
 
         Fragment fragment = new EditarFragment();
         fragment.setArguments(dados);
-
+        */
 
 
         //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentSelecionado).commit();
