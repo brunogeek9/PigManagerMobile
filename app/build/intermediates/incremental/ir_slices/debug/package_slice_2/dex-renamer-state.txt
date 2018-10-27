@@ -1,4 +1,0 @@
-#Fri Oct 26 13:55:52 GFT 2018
-base.0=C\:\\Users\\lucas\\AndroidStudioProjects\\PigManager2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
-path.0=classes.dex
-renamed.0=classes.dex
