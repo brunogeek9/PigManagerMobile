@@ -3,15 +3,22 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
+import br.ufrn.eaj.tads.pigmanager.Adapter.UsuarioAdapter;
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
@@ -26,9 +33,8 @@ import retrofit2.Response;
  * A simple {@link Fragment} subclass.
  */
 public class ListarFragment extends Fragment {
-    private RetrofitConfig retrofitConfig;
     private List<Usuario> listaUsuario = new ArrayList<>();
-   // private Button btteste;
+
 
     public ListarFragment() {
         // Required empty public constructor
@@ -64,7 +70,72 @@ public class ListarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_listar, container, false);
-       final Button bt = view.findViewById(R.id.btteste);
+
+        final RecyclerView recyUsuario = view.findViewById(R.id.recyclerViewUsuario);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyUsuario.setLayoutManager(layoutManager);
+        recyUsuario.setItemAnimator(new DefaultItemAnimator());
+
+        Log.i("VDC", "aba listar usuario");
+
+        Call<List<Usuario>> call = new RetrofitConfig().getUsuarioService().listarUsuarios();
+        call.enqueue(new Callback<List<Usuario>>() {
+            @Override
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                Log.i("VDC", "resposta bem sucedida? " +response.isSuccessful());
+
+                if (response.isSuccessful()) {
+                    listaUsuario = response.body();
+                    recyUsuario.setAdapter(new UsuarioAdapter(listaUsuario,getContext()));
+
+                    Log.i("PA1", "Só Sucesso!!");
+                    Toast.makeText(getContext(), "Só Sucesso!!"+"Matrizes na Lista:"+listaUsuario.size(), Toast.LENGTH_SHORT).show();
+                }else {
+                    try {
+                        Log.i("PA1", response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                Log.i("VDC", "Falha ao listarr");
+                Log.i("VDC","Erro: "+t.getMessage());
+                Toast.makeText(getContext(), "Falha ao Listar Usuários", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /*final Button bt = view.findViewById(R.id.btteste);
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +172,7 @@ public class ListarFragment extends Fragment {
 
 
 
-        Log.i("VDC", "ENTOU NO CARD DE LISTAR");
+        Log.i("VDC", "ENTOU NO CARD DE LISTAR");*/
         // Inflate the layout for this fragment
         return view;
 
