@@ -52,6 +52,7 @@ public class InicioFragment extends Fragment {
 
 
 
+
 //        ImageButton botaoCadastro = view.findViewById(R.id.buttonCadastro);
 //        botaoCadastro.setOnClickListener(new View.OnClickListener() {
 //            @Override
