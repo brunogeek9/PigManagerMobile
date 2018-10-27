@@ -2,6 +2,7 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import java.util.concurrent.ExecutionException;
 
 import br.ufrn.eaj.tads.pigmanager.Adapter.UsuarioAdapter;
 import br.ufrn.eaj.tads.pigmanager.R;
+import br.ufrn.eaj.tads.pigmanager.listener.RecyclerUsuarioClique;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
 import br.ufrn.eaj.tads.pigmanager.retrofit.RetrofitConfig;
@@ -33,13 +35,12 @@ import retrofit2.Response;
  * A simple {@link Fragment} subclass.
  */
 public class ListarFragment extends Fragment {
-    private List<Usuario> listaUsuario = new ArrayList<>();
 
+    private List<Usuario> listaUsuario = new ArrayList<>();
 
     public ListarFragment() {
         // Required empty public constructor
     }
-
 
     /*public void listarUsuariosRetrofit(){
         ServicoUsuario servicoUsuario = (ServicoUsuario) retrofitConfig.getUsuarioService().listarUsuarios();
@@ -67,6 +68,13 @@ public class ListarFragment extends Fragment {
     }*/
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_listar, container, false);
@@ -88,8 +96,9 @@ public class ListarFragment extends Fragment {
                     listaUsuario = response.body();
                     recyUsuario.setAdapter(new UsuarioAdapter(listaUsuario,getContext()));
 
+
                     Log.i("PA1", "Só Sucesso!!");
-                    Toast.makeText(getContext(), "Só Sucesso!!"+"Matrizes na Lista:"+listaUsuario.size(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Só Sucesso!!"+"Usuários na Lista:"+listaUsuario.size(), Toast.LENGTH_SHORT).show();
                 }else {
                     try {
                         Log.i("PA1", response.errorBody().string());
@@ -108,31 +117,15 @@ public class ListarFragment extends Fragment {
             }
         });
 
+//        recyUsuario.addOnItemTouchListener(new RecyclerUsuarioClique(getContext(), recyUsuario, new RecyclerUsuarioClique.OnItemClickListener() {
+//            @Override
+//            public void onItemClique(View v, int position) {
+//                Log.i("PA1", "Entrou no click o OnListener");
+//            }
+//        }));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//        Log.i("PA1","TESTE ENTROU");
+//        testeId();
 
 
        /*final Button bt = view.findViewById(R.id.btteste);
@@ -174,15 +167,39 @@ public class ListarFragment extends Fragment {
 
         Log.i("VDC", "ENTOU NO CARD DE LISTAR");*/
         // Inflate the layout for this fragment
+
+//        if(listaUsuario != null){
+//            for (int x = 0; x < listaUsuario.size(); x++) {
+//                //Toast.makeText(getContext(), "ID: "+listaUsuario.get(x).getId(), Toast.LENGTH_SHORT).show();
+//                Log.i("TESTEID","ID: "+listaUsuario.get(x).getId());
+//            }
+//        }else{
+//            Log.i("TESTEID", "Lista vazia");
+//        }
+
         return view;
 
     }
 
-   /*public  void clicklistar(View v){
-        Log.i("VDC", "BOTAO LISTAR");
-        listarUsuariosRetrofit();
 
+    public void testeId(){
+       Log.i("PA1","ENTROU NO MÈTODO");
+       if(listaUsuario != null){
+           Log.i("PA1","ENTROU NO IF");
+           Log.i("PA1","Tamanho lista: "+listaUsuario.size());
+           for (int x = 0; x < listaUsuario.size(); x++) {
 
-    }*/
+               Log.i("PA1","ENTROU NO FOR");
+               //Toast.makeText(getContext(), "ID: "+listaUsuario.get(x).getId(), Toast.LENGTH_SHORT).show();
+               Log.i("PA1","ID: "+listaUsuario.get(x).getId());
+           }
+       }else{
+           Log.i("PA1", "Lista vazia");
+       }
+   }
+
+   private void listarUsuarios(){
+
+   }
 
 }

@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_listUsuario:
                     fragmentSelecionado = new ListarFragment();
                     break;
-
                 case R.id.nav_listPig:
                     fragmentSelecionado = new ListarMatrizFragment();
                     break;

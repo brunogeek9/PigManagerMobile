@@ -2,6 +2,7 @@
 <android.support.v7.widget.CardView
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -58,22 +59,39 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="90dp"
+            android:layout_height="68dp"
+            android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_remove_circle_black_24dp"/>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <android.support.v7.widget.AppCompatImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_edit_black_24dp"/>
+                <ImageButton
+                    android:id="@+id/imgDeletar"
+                    android:layout_width="37dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:paddingBottom="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_remove_circle_black_24dp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/imgEditar"
+                    android:layout_width="51dp"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_edit_black_24dp"
+                    card_view:layout_constraintStart_toEndOf="@+id/imgDeletar"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
         </LinearLayout>
 
 
