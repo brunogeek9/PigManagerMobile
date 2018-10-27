@@ -15,6 +15,7 @@ import android.widget.Toast;
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
 import br.ufrn.eaj.tads.pigmanager.retrofit.RetrofitConfig;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -80,6 +81,10 @@ public class CadastroFragment extends Fragment {
                     }
                 });
 
+
+
+                /* Fim do DELETE */
+
                 //Exemplo de GET
 //
 //                Call<Usuario> call = new RetrofitConfig().getUsuarioService().buscarUsuario("1");
@@ -108,4 +113,36 @@ public class CadastroFragment extends Fragment {
         return view;
     }
 
+    public void deletaUsuario(int id){
+        /* Exemplo de DELETE */
+
+        Call<ResponseBody> call2 = new RetrofitConfig().getUsuarioService().deletaUsuario(id);
+        call2.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Log.i("PA1","Deletrou usuário 2");
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.i("PA1", "Falha ao deletar usuário 2");
+            }
+        });
+    }
+
+
+    public void editarUsuario(int id){
+        Call<ResponseBody> call = new RetrofitConfig().getUsuarioService().editarUsuario(id);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
 }
