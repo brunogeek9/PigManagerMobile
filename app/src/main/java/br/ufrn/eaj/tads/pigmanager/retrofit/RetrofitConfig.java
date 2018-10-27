@@ -24,7 +24,11 @@ public class RetrofitConfig {
                 .readTimeout(100,TimeUnit.SECONDS).build();
         Gson gsonConverterFactory = new GsonBuilder().setDateFormat("yyyy/MM/dd").create();
         this.retrofit = new Retrofit.Builder()
+<<<<<<< HEAD
                 .baseUrl("http://10.77.15.9:8080/PigManager/")
+=======
+                .baseUrl("http://10.77.15.38:8080/PigManager/")
+>>>>>>> origin/MatrizVisualizar
                 .addConverterFactory(GsonConverterFactory.create(gsonConverterFactory))
                 .client(client)
                 .build();

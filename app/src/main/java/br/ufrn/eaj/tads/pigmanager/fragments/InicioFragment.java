@@ -50,6 +50,14 @@ public class InicioFragment extends Fragment {
 
 
 
+        CardView card3 = view.findViewById(R.id.card3);
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("PA1","Clicou no card de cadastro");
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ListarMatrizFragment()).commit();
+            }
+        });
 
 
 //        ImageButton botaoCadastro = view.findViewById(R.id.buttonCadastro);

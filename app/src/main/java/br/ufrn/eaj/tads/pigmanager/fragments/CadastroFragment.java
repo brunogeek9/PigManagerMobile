@@ -38,7 +38,6 @@ public class CadastroFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
 
 
-
         final EditText textNome = view.findViewById(R.id.textNome);
         final EditText textSenha = view.findViewById(R.id.textSenha);
         final EditText textEmail = view.findViewById(R.id.textEmail);
