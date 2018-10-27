@@ -15,45 +15,46 @@
     >
 
 
-
     <LinearLayout
-        android:orientation="horizontal" android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
         android:padding="5dp">
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="2"
-            android:src="@drawable/porco1"
             android:id="@+id/img"
-            android:padding="5dp" />
+            android:layout_width="38dp"
+            android:layout_height="80dp"
+            android:layout_weight="2"
+            android:padding="5dp"
+            android:src="@drawable/porco1" />
+
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="17dp"
+            android:layout_height="82dp"
             android:layout_weight="7"
+            android:orientation="vertical"
             android:padding="5dp">
 
             <TextView
                 android:id="@+id/identificador"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
                 android:text="Identificador do Porco"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/raca"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:text="Raça do Porco"
                 android:textStyle="italic" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/peso"
-            android:layout_width="7dp"
-            android:layout_height="50dp"
+            android:layout_width="71dp"
+            android:layout_height="77dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:gravity="center"

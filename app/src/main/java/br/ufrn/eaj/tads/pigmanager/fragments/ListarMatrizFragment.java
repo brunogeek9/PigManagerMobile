@@ -33,7 +33,7 @@ import retrofit2.Response;
  */
 public class ListarMatrizFragment extends Fragment {
 
-    private List<Matriz> listaMatriz = new ArrayList<>();
+    private List<Matriz> listaMatriz;
 
     public ListarMatrizFragment() {
         // Required empty public constructor
@@ -53,11 +53,12 @@ public class ListarMatrizFragment extends Fragment {
 
         //Date data = new GregorianCalendar(2018, Calendar.JANUARY, 20).getTime();
         //listaMatriz.add(new Matriz(2.0,"KKKK",2.9, data, EnumEstagio.ALEITAMENTO,"dawda"));
-
         RecyclerView.LayoutManager layout = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
         recyMatriz.setLayoutManager(layout);
         recyMatriz.setItemAnimator(new DefaultItemAnimator());
+
+
        //recyMatriz.setAdapter(new MatrizAdapter(listaMatriz,getContext()));
 
 
@@ -69,7 +70,7 @@ public class ListarMatrizFragment extends Fragment {
                 Log.i("PA1", "Entrou no Listar Matriz");
 
                 if (response.isSuccessful()) {
-
+                    listaMatriz = response.body();
                     recyMatriz.setAdapter(new MatrizAdapter(listaMatriz,getContext()));
 
                     Log.i("PA1", "Só Sucesso!!");
