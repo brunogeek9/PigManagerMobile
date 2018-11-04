@@ -26,6 +26,9 @@ public interface ServicoUsuario {
     @DELETE("usuario/{id}")
     Call<ResponseBody> deletaUsuario(@Path("id") int id);
 
-    @PUT("usuario/{id}")
-    Call<ResponseBody> editarUsuario(@Path("id") int id);
+//    @PUT("usuario/{id}")
+//    Call<ResponseBody> editarUsuario(@Path("id") int id, @Body Usuario usuario);
+
+    @PUT("usuario/")
+    Call<ResponseBody> editarUsuario(@Body Usuario usuario);
 }

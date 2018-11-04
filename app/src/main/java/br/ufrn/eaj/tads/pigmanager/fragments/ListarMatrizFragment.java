@@ -13,16 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
-import br.ufrn.eaj.tads.pigmanager.Adapter.MatrizAdapter;
+import br.ufrn.eaj.tads.pigmanager.adapter.MatrizAdapter;
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
-import br.ufrn.eaj.tads.pigmanager.modelo.enums.EnumEstagio;
 import br.ufrn.eaj.tads.pigmanager.retrofit.RetrofitConfig;
 import retrofit2.Call;
 import retrofit2.Callback;

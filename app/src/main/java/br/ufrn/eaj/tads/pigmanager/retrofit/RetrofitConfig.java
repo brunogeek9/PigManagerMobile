@@ -27,7 +27,7 @@ public class RetrofitConfig {
                 .readTimeout(100,TimeUnit.SECONDS).build();
         Gson gsonConverterFactory = new GsonBuilder().setDateFormat("yyyy/MM/dd").create();
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.91:8084/PigManager/")
+                .baseUrl("http://192.168.1.109:8084/PigManager/")
                 .addConverterFactory(GsonConverterFactory.create(gsonConverterFactory))
                 .client(client)
                 .build();

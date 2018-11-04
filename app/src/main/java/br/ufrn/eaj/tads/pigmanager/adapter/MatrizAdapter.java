@@ -1,4 +1,4 @@
-package br.ufrn.eaj.tads.pigmanager.Adapter;
+package br.ufrn.eaj.tads.pigmanager.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

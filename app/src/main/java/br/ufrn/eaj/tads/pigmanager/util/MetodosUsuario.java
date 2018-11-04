@@ -12,7 +12,13 @@ import retrofit2.Response;
 
 //Classe abstrata com métodos estáticos para auxliar
 
-public abstract class MetodosUsuario {
+public class MetodosUsuario {
+
+    //Não mexer nesta linha pois quebrará a função de editar do sistema
+    public static Usuario usuario;
+
+    public MetodosUsuario() {
+    }
 
     public static void deletarUsuario(Usuario usuario) {
 
@@ -42,5 +48,13 @@ public abstract class MetodosUsuario {
 
     public static void editarUsuario(Usuario usuario){
 
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

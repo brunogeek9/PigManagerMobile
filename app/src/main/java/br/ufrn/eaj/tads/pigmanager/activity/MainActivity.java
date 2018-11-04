@@ -1,4 +1,4 @@
-package br.ufrn.eaj.tads.pigmanager;
+package br.ufrn.eaj.tads.pigmanager.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,11 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.fragments.ConfiguracaoFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.InicioFragment;
-import br.ufrn.eaj.tads.pigmanager.fragments.ListarFragment;
+import br.ufrn.eaj.tads.pigmanager.fragments.ListarUsuarioFragment;
 import br.ufrn.eaj.tads.pigmanager.fragments.ListarMatrizFragment;
-import br.ufrn.eaj.tads.pigmanager.fragments.ListarPigFragment;
 import br.ufrn.eaj.tads.pigmanager.helper.BottomNavigationViewHelper;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     fragmentSelecionado = new InicioFragment();
                     break;
                 case R.id.nav_listUsuario:
-                    fragmentSelecionado = new ListarFragment();
+                    fragmentSelecionado = new ListarUsuarioFragment();
                     break;
                 case R.id.nav_listPig:
                     fragmentSelecionado = new ListarMatrizFragment();

@@ -130,7 +130,7 @@ public class CadastroFragment extends Fragment {
         });
     }
 
-
+    /*
     public void editarUsuario(int id){
         Call<ResponseBody> call = new RetrofitConfig().getUsuarioService().editarUsuario(id);
         call.enqueue(new Callback<ResponseBody>() {
@@ -145,4 +145,5 @@ public class CadastroFragment extends Fragment {
             }
         });
     }
+    */
 }

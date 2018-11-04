@@ -1,10 +1,13 @@
-package br.ufrn.eaj.tads.pigmanager.Adapter;
+package br.ufrn.eaj.tads.pigmanager.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +16,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.ufrn.eaj.tads.pigmanager.EditarFragment;
+import br.ufrn.eaj.tads.pigmanager.fragments.EditarFragment;
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
 import br.ufrn.eaj.tads.pigmanager.util.MetodosUsuario;
@@ -61,6 +64,8 @@ public class UsuarioAdapter extends RecyclerView.Adapter {
                 //editarUsuario(position);
 
                 Usuario usuario = listarUsuario.get(position);
+
+                /*
                 Bundle dados = new Bundle();
                 dados.putString("nome", usuario.getNome());
                 dados.putString("email", usuario.getEmail());
@@ -69,10 +74,37 @@ public class UsuarioAdapter extends RecyclerView.Adapter {
 
                 Fragment fragment = new EditarFragment();
                 fragment.setArguments(dados);
+                */
+
+                //MetodosUsuario utilUsuario = new MetodosUsuario();
+                //utilUsuario.setUsuario(usuario);
+
+                MetodosUsuario.usuario = usuario;
 
                 //Implementar a troca de fragment
 
-                //usuarioViewHolder.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentSelecionado).commit();
+                //context.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentSelecionado).commit();
+
+                // Create new fragment and transaction
+//                Fragment fragment = new EditarFragment();
+//                android.support.v4.app.FragmentManager fm2 =
+//                FragmentTransaction ft2 = fm2.beginTransaction();
+//                // Replace whatever is in the fragment_container view with this fragment,
+//                // and add the transaction to the back stack
+//                ft2.replace(R.id.layout_alvo, newFragment);
+//                ft2.addToBackStack(null);
+//                // Commit the transaction
+//                ft2.commit();
+
+                Log.i("TESTE", "USUARIO ADAPTER: Usuário: " + MetodosUsuario.usuario.getNome());
+
+                Fragment fragment = new EditarFragment();
+
+
+                //Salvar esse trecho de código, pois ele é maravilhoso.
+                ((FragmentActivity) v.getContext()).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, fragment)
+                        .commit();
             }
         });
     }

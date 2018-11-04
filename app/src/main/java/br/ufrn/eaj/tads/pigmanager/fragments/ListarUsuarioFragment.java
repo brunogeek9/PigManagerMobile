@@ -11,21 +11,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
-import br.ufrn.eaj.tads.pigmanager.Adapter.UsuarioAdapter;
+import br.ufrn.eaj.tads.pigmanager.adapter.UsuarioAdapter;
 import br.ufrn.eaj.tads.pigmanager.R;
-import br.ufrn.eaj.tads.pigmanager.listener.RecyclerUsuarioClique;
-import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
 import br.ufrn.eaj.tads.pigmanager.retrofit.RetrofitConfig;
-import br.ufrn.eaj.tads.pigmanager.servicos.ServicoUsuario;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,11 +29,11 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListarFragment extends Fragment {
+public class ListarUsuarioFragment extends Fragment {
 
     private List<Usuario> listaUsuario = new ArrayList<>();
 
-    public ListarFragment() {
+    public ListarUsuarioFragment() {
         // Required empty public constructor
     }
 
@@ -166,37 +161,13 @@ public class ListarFragment extends Fragment {
 
 
         Log.i("VDC", "ENTOU NO CARD DE LISTAR");*/
-        // Inflate the layout for this fragment
 
-//        if(listaUsuario != null){
-//            for (int x = 0; x < listaUsuario.size(); x++) {
-//                //Toast.makeText(getContext(), "ID: "+listaUsuario.get(x).getId(), Toast.LENGTH_SHORT).show();
-//                Log.i("TESTEID","ID: "+listaUsuario.get(x).getId());
-//            }
-//        }else{
-//            Log.i("TESTEID", "Lista vazia");
-//        }
+
+
 
         return view;
 
     }
-
-
-    public void testeId(){
-       Log.i("PA1","ENTROU NO MÈTODO");
-       if(listaUsuario != null){
-           Log.i("PA1","ENTROU NO IF");
-           Log.i("PA1","Tamanho lista: "+listaUsuario.size());
-           for (int x = 0; x < listaUsuario.size(); x++) {
-
-               Log.i("PA1","ENTROU NO FOR");
-               //Toast.makeText(getContext(), "ID: "+listaUsuario.get(x).getId(), Toast.LENGTH_SHORT).show();
-               Log.i("PA1","ID: "+listaUsuario.get(x).getId());
-           }
-       }else{
-           Log.i("PA1", "Lista vazia");
-       }
-   }
 
    private void listarUsuarios(){
 
