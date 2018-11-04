@@ -44,7 +44,7 @@ public class InicioFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.i("PA1","Clicou no card de cadastro");
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroUsuarioFragment()).commit();
             }
         });
 
@@ -59,7 +59,7 @@ public class InicioFragment extends Fragment {
 //            public void onClick(View view) {
 //                Log.i("PA1", "Clicou no botão de cadastro");
 //
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroFragment()).commit();
+//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroUsuarioFragment()).commit();
 //
 //            }
 //        });

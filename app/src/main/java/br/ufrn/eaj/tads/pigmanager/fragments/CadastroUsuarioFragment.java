@@ -3,6 +3,7 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,10 +25,10 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CadastroFragment extends Fragment {
+public class CadastroUsuarioFragment extends Fragment {
 
 
-    public CadastroFragment() {
+    public CadastroUsuarioFragment() {
         // Required empty public constructor
     }
 
@@ -47,7 +48,7 @@ public class CadastroFragment extends Fragment {
 
         botaoCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
 
                 String nome = textNome.getText().toString();
                 String senha = textSenha.getText().toString();
@@ -69,6 +70,11 @@ public class CadastroFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i("PA1", "Inseriu com sucesso");
                             Toast.makeText(getActivity(), "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+
+                            Fragment fragment = new ListarUsuarioFragment();
+                            ((FragmentActivity) view.getContext()).getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.fragment_container, fragment)
+                                    .commit();
                         }
                     }
 

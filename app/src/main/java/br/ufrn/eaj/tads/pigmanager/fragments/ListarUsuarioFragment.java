@@ -4,6 +4,7 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -92,8 +93,8 @@ public class ListarUsuarioFragment extends Fragment {
                     recyUsuario.setAdapter(new UsuarioAdapter(listaUsuario,getContext()));
 
 
-                    Log.i("PA1", "Só Sucesso!!");
-                    Toast.makeText(getContext(), "Só Sucesso!!"+"Usuários na Lista:"+listaUsuario.size(), Toast.LENGTH_SHORT).show();
+                    //Log.i("PA1", "Só Sucesso!!");
+                    //Toast.makeText(getContext(), "Só Sucesso!!"+"Usuários na Lista:"+listaUsuario.size(), Toast.LENGTH_SHORT).show();
                 }else {
                     try {
                         Log.i("PA1", response.errorBody().string());

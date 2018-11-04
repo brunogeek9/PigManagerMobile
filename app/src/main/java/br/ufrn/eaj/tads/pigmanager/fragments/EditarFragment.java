@@ -4,12 +4,14 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Usuario;
@@ -61,7 +63,9 @@ public class EditarFragment extends Fragment {
 
         botaoEditar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
+
+                final View view = v;
 
                 Usuario novoUsuario = new Usuario();
                 novoUsuario.setNome(textNome.getText().toString());
@@ -77,6 +81,13 @@ public class EditarFragment extends Fragment {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         Log.i("TESTE", "Editou com sucesso!");
+                        if(response.isSuccessful()){
+                            Toast.makeText(getContext(), "Editado com sucesso!", Toast.LENGTH_SHORT).show();
+                            Fragment fragment = new ListarUsuarioFragment();
+                            ((FragmentActivity) v.getContext()).getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.fragment_container, fragment)
+                                    .commit();
+                        }
                     }
 
                     @Override
