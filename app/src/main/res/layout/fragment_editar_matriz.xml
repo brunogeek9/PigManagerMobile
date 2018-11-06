@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CadastroUsuarioFragment"
+    tools:context=".fragments.EditarMatrizFragment"
     tools:layout_editor_absoluteY="25dp">
 
     <!-- TODO: Update blank fragment layout -->
-
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/Estagio"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/EstagioEditar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewk">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/textRaca"
+            android:id="@+id/textRacaEditar"
             android:layout_width="364dp"
             android:layout_height="wrap_content"
             android:hint="Raça "
@@ -36,10 +35,10 @@
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout8"
         app:layout_constraintEnd_toStartOf="@+id/textInputLayout4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Estagio">
+        app:layout_constraintTop_toBottomOf="@+id/EstagioEditar">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/textIdentificador"
+            android:id="@+id/textIdentificadorEditar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Identificador da Matriz"
@@ -54,10 +53,10 @@
         android:layout_marginEnd="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/Estagio">
+        app:layout_constraintTop_toBottomOf="@+id/EstagioEditar">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/textPeso"
+            android:id="@+id/textPesoEditar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Peso da Matriz"
@@ -79,23 +78,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/botaoCadastrarMatriz"
+        android:id="@+id/botaoAtualizarMatriz"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="118dp"
         android:background="#e46b94"
-        android:text="Cadastrar"
+        android:text="Atualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
 
     <Spinner
-        android:id="@+id/Estagio"
+        android:id="@+id/EstagioEditar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:layout_marginBottom="23dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,18 +105,18 @@
         android:id="@+id/textInputLayout8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/botaoCadastrarMatriz"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/botaoAtualizarMatriz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/textData"
+            android:id="@+id/textDataEditar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Data de Nascimento"
-            android:inputType="date"/>
+            android:inputType="date" />
     </android.support.design.widget.TextInputLayout>
 
 

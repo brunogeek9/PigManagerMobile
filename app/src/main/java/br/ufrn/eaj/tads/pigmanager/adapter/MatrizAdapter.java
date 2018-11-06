@@ -2,17 +2,23 @@ package br.ufrn.eaj.tads.pigmanager.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
 
 import br.ufrn.eaj.tads.pigmanager.R;
+import br.ufrn.eaj.tads.pigmanager.fragments.EditarMatrizFragment;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
+import br.ufrn.eaj.tads.pigmanager.util.MetodosMatriz;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MatrizAdapter extends RecyclerView.Adapter {
 
@@ -37,16 +43,48 @@ public class MatrizAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
         MatrizViewHolder mvh = (MatrizViewHolder) holder;
 
         matrizEscolhida = listaMatrizes.get(position);
 
-        mvh.identificador.setText(""+matrizEscolhida.getIdentificador());
+        mvh.identificador.setText(""+(int) matrizEscolhida.getIdentificador());
         mvh.img.setImageResource(R.drawable.porco1);
-        mvh.peso.setText(""+matrizEscolhida.getPeso());
-        mvh.raca.setText(matrizEscolhida.getRaca());
+        mvh.estagio.setText(""+matrizEscolhida.getEstagio());
+
+
+        mvh.deletarM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deletarMatriz(position);
+            }
+        });
+
+
+        mvh.atualizarM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Matriz matriz = listaMatrizes.get(position);
+
+                MetodosMatriz.matriz = matriz;
+
+                Log.i("TESTE", "MATRIZ ADAPTER: Matriz: " + MetodosMatriz.matriz.getIdentificador());
+
+                Fragment fragmentEditar = new EditarMatrizFragment();
+
+
+                //Salvar esse trecho de código, pois ele é maravilhoso.
+                ((FragmentActivity) v.getContext()).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, fragmentEditar)
+                        .commit();
+
+            }
+        });
+
+
+
     }
 
     @Override
@@ -55,21 +93,40 @@ public class MatrizAdapter extends RecyclerView.Adapter {
     }
 
 
+
+
+    private void deletarMatriz(int position) {
+
+        MetodosMatriz.DeletarMatriz(listaMatrizes.get(position));
+
+        listaMatrizes.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, listaMatrizes.size());
+    }
+
+
+
+
+
+
+
     public class MatrizViewHolder extends RecyclerView.ViewHolder {
 
-        final ImageView img;
+        final CircleImageView img;
         final TextView identificador;
-        final TextView raca;
-        final TextView peso;
-
+        final TextView estagio;
+        final ImageButton deletarM;
+        final ImageButton atualizarM;
 
         public MatrizViewHolder(View itemView) {
             super(itemView);
 
-            img = itemView.findViewById(R.id.img);
-            identificador = itemView.findViewById(R.id.identificador);
-            raca = itemView.findViewById(R.id.raca);
-            peso = itemView.findViewById(R.id.peso);
+            img = itemView.findViewById(R.id.imgk);
+            identificador = itemView.findViewById(R.id.identificadork);
+            estagio = itemView.findViewById(R.id.estagiok);
+            deletarM = itemView.findViewById(R.id.deletarItem);
+            atualizarM = itemView.findViewById(R.id.atualizarItem);
+
         }
     }
 

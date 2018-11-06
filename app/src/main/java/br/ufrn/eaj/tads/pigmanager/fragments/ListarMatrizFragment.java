@@ -2,6 +2,8 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,11 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.util.List;
-
 import br.ufrn.eaj.tads.pigmanager.adapter.MatrizAdapter;
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
@@ -29,6 +30,9 @@ import retrofit2.Response;
 public class ListarMatrizFragment extends Fragment {
 
     private List<Matriz> listaMatriz;
+    RecyclerView recyMatriz;
+    FloatingActionButton fab;
+
 
     public ListarMatrizFragment() {
         // Required empty public constructor
@@ -40,22 +44,26 @@ public class ListarMatrizFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-    View view  = inflater.inflate(R.layout.fragment_listar_matriz, container, false);
+        final View view  = inflater.inflate(R.layout.fragment_listar_matriz, container, false);
+
+        recyMatriz = view.findViewById(R.id.recyclerViewMatriz);
+        fab = view.findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroFragmentMatriz()).commit();
+
+                Snackbar.make(view, "Cadastrar Nova Matriz", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
 
-
-    final RecyclerView recyMatriz = view.findViewById(R.id.recyclerViewMatriz);
-
-        //Date data = new GregorianCalendar(2018, Calendar.JANUARY, 20).getTime();
-        //listaMatriz.add(new Matriz(2.0,"KKKK",2.9, data, EnumEstagio.ALEITAMENTO,"dawda"));
         RecyclerView.LayoutManager layout = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
         recyMatriz.setLayoutManager(layout);
         recyMatriz.setItemAnimator(new DefaultItemAnimator());
-
-
-       //recyMatriz.setAdapter(new MatrizAdapter(listaMatriz,getContext()));
-
 
         Call<List<Matriz>> call = new RetrofitConfig().getMatrizService().listarMatrizes();
 
@@ -66,6 +74,7 @@ public class ListarMatrizFragment extends Fragment {
 
                 if (response.isSuccessful()) {
                     listaMatriz = response.body();
+
                     recyMatriz.setAdapter(new MatrizAdapter(listaMatriz,getContext()));
 
                     Log.i("PA1", "Só Sucesso!!");
@@ -86,6 +95,7 @@ public class ListarMatrizFragment extends Fragment {
                 Toast.makeText(getContext(), "Falhou no Listar Matriz", Toast.LENGTH_SHORT).show();
             }
         });
+
 
 
 
