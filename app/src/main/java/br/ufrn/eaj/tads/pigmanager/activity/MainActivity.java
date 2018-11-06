@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //Desativar animação
         BottomNavigationViewHelper.disableShiftMode(bottomnav);
         bottomnav.setOnNavigationItemSelectedListener(navListenner);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InicioFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ListarMatrizFragment()).commit();
 
 
 
@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragmentSelecionado = null;
 
             switch (item.getItemId()){
-                case R.id.nav_home:
-                    fragmentSelecionado = new InicioFragment();
-                    break;
+//                case R.id.nav_home:
+//                    fragmentSelecionado = new InicioFragment();
+//                    break;
                 case R.id.nav_listUsuario:
                     fragmentSelecionado = new ListarUsuarioFragment();
                     break;
