@@ -3,6 +3,7 @@ package br.ufrn.eaj.tads.pigmanager.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -33,6 +34,7 @@ import retrofit2.Response;
 public class ListarUsuarioFragment extends Fragment {
 
     private List<Usuario> listaUsuario = new ArrayList<>();
+    private FloatingActionButton fab;
 
     public ListarUsuarioFragment() {
         // Required empty public constructor
@@ -75,6 +77,8 @@ public class ListarUsuarioFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_listar, container, false);
 
+        fab = view.findViewById(R.id.fabUsuario);
+
         final RecyclerView recyUsuario = view.findViewById(R.id.recyclerViewUsuario);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyUsuario.setLayoutManager(layoutManager);
@@ -110,6 +114,15 @@ public class ListarUsuarioFragment extends Fragment {
                 Log.i("VDC","Erro: "+t.getMessage());
                 Toast.makeText(getContext(), "Falha ao Listar Usuários", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((FragmentActivity) v.getContext()).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new CadastroUsuarioFragment())
+                        .commit();
             }
         });
 
