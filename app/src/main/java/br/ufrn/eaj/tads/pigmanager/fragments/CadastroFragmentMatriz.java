@@ -1,6 +1,5 @@
 package br.ufrn.eaj.tads.pigmanager.fragments;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -17,9 +16,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import br.ufrn.eaj.tads.pigmanager.R;
 import br.ufrn.eaj.tads.pigmanager.modelo.Matriz;
@@ -28,8 +25,6 @@ import br.ufrn.eaj.tads.pigmanager.retrofit.RetrofitConfig;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static br.ufrn.eaj.tads.pigmanager.modelo.enums.EnumEstagio.ALEITAMENTO;
 
 /**
  * Classe responsável por mostrar o form
@@ -61,16 +56,16 @@ public class CadastroFragmentMatriz extends Fragment {
         raca = view.findViewById(R.id.textRaca);
         dataNascimento = view.findViewById(R.id.textData);
         peso = view.findViewById(R.id.textPeso);
-        spinner = view.findViewById(R.id.spinner);
+        spinner = view.findViewById(R.id.Estagio);
 
         /* Adicionando os estagios de uma matriz no spinner
            para que o usuário escolha em qual estágio a matriz se encontra
            Se adicionar um novo estágio, adicione no SPINNER
          */
-        lista.add(EnumEstagio.ALEITAMENTO.toString());
-        lista.add(EnumEstagio.DESCANSO.toString());
-        lista.add(EnumEstagio.GRAVIDA.toString());
-        lista.add(EnumEstagio.PRENHA.toString());
+        lista.add(EnumEstagio.COBERTA.toString());
+        lista.add(EnumEstagio.PRENHES.toString());
+        lista.add(EnumEstagio.LACTACAO.toString());
+        lista.add(EnumEstagio.VAZIA.toString());
         /* Fim da adição dos estagios  */
 
         /* Adapter para o spinner mostrar na tela os estagios da matriz

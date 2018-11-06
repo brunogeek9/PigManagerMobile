@@ -70,7 +70,7 @@
                 <ImageButton
                     android:id="@+id/imgDeletar"
                     android:layout_width="37dp"
-                    android:layout_height="60dp"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:background="@android:color/transparent"
                     android:paddingBottom="20dp"
@@ -82,7 +82,7 @@
                 <ImageButton
                     android:id="@+id/imgEditar"
                     android:layout_width="51dp"
-                    android:layout_height="43dp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="8dp"
                     android:background="@android:color/transparent"
