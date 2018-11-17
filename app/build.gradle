@@ -37,6 +37,10 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
     implementation 'com.android.support:design:28.0.0-alpha3'
     implementation 'com.android.support:cardview-v7:28.0.0-alpha3'
+
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+
 }
 
 configurations.all {
