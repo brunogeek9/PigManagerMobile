@@ -15,7 +15,7 @@ import br.ufrn.eaj.tads.pigmanager.fragments.ListarMatrizFragment;
 import br.ufrn.eaj.tads.pigmanager.helper.BottomNavigationViewHelper;
 
 public class MainActivity extends AppCompatActivity {
- 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_listUsuario:
                     fragmentSelecionado = new ListarUsuarioFragment();
                     break;
-                case R.id.nav_listPig:
+
+               /* case R.id.nav_home:
                     fragmentSelecionado = new ListarMatrizFragment();
                     break;
+                    */
                 case R.id.nav_settings:
                     fragmentSelecionado = new ConfiguracaoFragment();
                     break;
